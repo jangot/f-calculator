@@ -1,50 +1,98 @@
 <html>
 <head><meta charset="utf-8">
 <title>калькулятор элементов фигурного катания</title>
-    <link rel="stylesheet" href="index.css" />
+<link rel="stylesheet" href="index.css"/>
 </head>
 <body>
+	
 	<div id="contanerOUTTER">
 		<div id="side_bar">
 			<center><img src="imagesCalculator/skater4.png" style="margin:5px;"></center>
 			<center><h2>условные обозначения элементов фигурного катания</h2></center>
-				<center>прыжки</center>
-					<ul>
-						<li>Аксель</li>
-						<li>Тулуп</li>
-						<li>Сальхов</li>
-						<li>Ритбергер</li>
-						<li>Флипп</li>
-						<li>Лутц</li>
-					</ul>
-				<center><h3>вращения</h3></center>
-				<center><h3>дорожки</h3></center>
+				<center><h3 onClick="scroll_list('jumps')" class="point_of_list">прыжки</h3></center>
+						
+						<ul class="hide" id="jumps">
+							<li>Аксель - A</li>
+							<li>Тулуп - T</li>
+							<li>Сальхов - S</li>
+							<li>Ритбергер - Lo</li>
+							<li>Флипп - F</li>
+							<li>Лутц - Lz</li>
+						</ul>
+					
+				<center><h3 onClick="scroll_list('spins')" class="point_of_list">вращения</h3></center>
+					<div class="hide" id="spins">
+					    <h4 class="sub_title" onClick="scroll_list('basic_positions')">базовые позиции</h4>
+							<ul class="hide" id="basic_positions">
+								<li>Стоя - USp</li>
+								<li>Волчок - SSp</li>
+								<li>Либела - CSp</li>
+								<li>Заклон - LSp</li>
+							</ul>
+						
+					<h4 class="sub_title" onClick="scroll_list('fly_spins')">прыжок во вращение</h4>
+						
+							<ul class="hide" id="fly_spins">
+								<li>Прыжок в позицию стоя - FUSp</li>
+								<li>Прыжок в волчок - FSSp</li>
+								<li>Прыжок в либелу - FCSp</li>
+								<li>Прыжок в заклон - FLSp</li>
+							</ul>
+						
+					<h4 class="sub_title" onClick="scroll_list('change_leg')">вращения со сменой ноги</h4>
+						
+							<ul class="hide" id="change_leg">
+								<li>Стоя со сменой ноги - (F)CUSp</li>
+								<li>Волчок со сменой ноги - (F)CSSp</li>
+								<li>Либела со сменой ноги - (F)CCSp</li>
+								<li>Заклон со сменой ноги - (F)CLSp</li>
+							</ul>
+						
+					<h4 class="sub_title" onClick="scroll_list('combo')">комбинация вращений</h4>
+						
+							<ul class="hide" id="combo">
+								<li>Без смены ноги - CoSp</li>
+								<li>Со сменой ноги - CCoSp</li>
+							</ul>
+				</div>		
+				<center><h3 onClick="scroll_list('steps')" class="point_of_list">дорожки</h3></center>
+					
+						<ul class="hide" id="steps">
+							<li>Дорожка шагов - StSq</li>
+							<li>Хореографическая последовательность - ChSq</li>
+						</ul>		
 		</div>
-		<div id="hat_bar">
+		
+		<div id="hat_bar"> <!--шапка сайта-->
 			<center><h1>калькулятор элементов программы по фигурному катанию</h1></center>
 		</div>
 		<div id="contanerINNER">
 			<div id="contanerFORM">
 				<div><output id="atention"></output></div>
-
+    
 				<!--Ряд #1-->
-				<div class="form">
+				<div class="form"> 
 					<label for="in_1">01.</label>
-					<input type="text"  id="in_1">
-					<button onClick="input_show('in_2')">+</button>
-					<input type="text" class="input_hide"  id="in_2">
+					
+					<input type="text" onClick="show_element('in_11')"  id="in_1">
+					<button onClick="show_element('in_2')" class="hide" id="in_11">+</button>
+					<input type="text" onClick="show_element('in_21')" class="hide" id="in_2">
+					<button onClick="show_element('in_3')" class="hide" id="in_21">+</button>
+					<input type="text" class="hide" id="in_3">
 					<output id="out_1"></output>
 				</div>
-
+    
 				<!--Ряд #2-->
-				<div class="form">
-					<label for="in_3">02.</label>
-					<input type="text"  id="in_3">
-					<button onClick="input_show('in_4')">+</button>
-					<input type="text" class="input_hide" id="in_4">
+				<div class="form"> 
+					<label for="in_4">02.</label>
+					<input type="text" onClick="show_element('in_41')" id="in_4">
+					<button onClick="show_element('in_5')" class="hide" id="in_41">+</button>
+					<input type="text" onClick="show_element('in_51')" class="hide" id="in_5">
+					<button onClick="show_element('in_6')" class="hide" id="in_51">+</button>
+					<input type="text" class="hide" id="in_6">
 					<output id="out_2"></output>
 				</div>
-
+    
 				<div class="form" id="contanerBUTTON">
 					<button onClick="resett()">сброс</button>
 					<button onClick="get_value()">общее количество баллов</button>
@@ -53,7 +101,6 @@
 			</div>
 		</div>
 	</div>
-
-    <script src="index.js"></script>
+	<script src="index.js"></script>
 </body>
 </html>
