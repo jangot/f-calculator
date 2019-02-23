@@ -1,168 +1,262 @@
-<html>
-<head><meta charset="utf-8">
-<title>калькулятор элементов фигурного катания</title>
-<style type="text/css">
-h2 {
-  font-size: 18pt;
-  }
-h3 {
-  font-size: 18pt;
-  }
-.form {
-  margin: 5px 5px 0px 5px
-  }
-input {
-  width: 100px;
-    height: 25px;
-  font-size: 20px;
-  }
-#contanerOUTTER {
-  width: 1180px;
-    height:1800px;
-  float: left;}
-#hat_bar {
-  width: 880px;
-    heihgt: 300px;
-  float: left;
-  background: rgb(0,200,250);
-  }
-#side_bar {
-  width: 300px;
-    height: 1500px;
-  float: left;
-  background: rgb(0,200,250);
-  }
-#contanerINNER {
-  width: 880px;
-    height: 1381px;
-  float: left;
-  background: rgb(200,250,0);
-  }
-#contanerFORM {
-  width: 312px;
-    height: 1000px;
-  }
-#contanerBUTTON {
-  text-align: right;
-  }
-#buttonTOTAL_size {
-  width: 200px;
-    height: 25px;
-  }
-</style>
-</head>
-<body>
-<div id="contanerOUTTER">
-  <div id="side_bar">
-    <center><h2>условные обозначения элементов фигурного катания</h2></center>
-    <center><h3>прыжки</h3></center>
-    <center><h3>вращения</h3></center>
-    <center><h3>дорожки</h3></center>
-  </div>
-  <div id="hat_bar">
-    <center><h1>калькулятор элементов программы по фигурному катанию</h1></center>
-  </div>
-  <div id="contanerINNER">
-   <div id="contanerFORM">
-       <div><output id="atention"></output>
-    
-    <!--Ряд #1-->
-    <div class="form"> 
-      <label for="in_1">01.</label>
-      <input type="text"  id="in_1">
-      <button>+</button>
-      <input type="text"  id="in_2">
-      <output id="out_1"></output>
-    </div>
-    
-    <!--Ряд #2-->
-    <div class="form"> 
-    <label for="in_3">02.</label>
-    <input type="text"  id="in_3">
-    <button>+</button>
-    <input type="text"  id="in_4">
-    <output id="out_2"></output>
-    </div>
-    
-    <div class="form" id="contanerBUTTON">
-      <button onClick="get_value()" id="buttonTOTAL_size">общее количество баллов</button>
-      <output id="outTotal"></output>
-    </div>
-   </div>
-  </div>
-</div>
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<script>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<link rel="stylesheet" href="index.css"/>
+    <title>калькулятор элементов программы фигурного катания</title>
+  </head>
+  <body>
+    
+	<div class="contanerOUTTER">
+		<div class="side_bar_left">
+			<center><img src="imagesCalculator/skater4.png" style="margin:15px;"></center>
+			<center><h2>условные обозначения элементов фигурного катания</h2></center>
+				<center><h3 onClick="scroll_list('jumps')" class="point_of_list">прыжки</h3></center>
+						
+						<ul class="hide" id="jumps">
+							<li>Аксель - A</li>
+							<li>Тулуп - T</li>
+							<li>Сальхов - S</li>
+							<li>Ритбергер - Lo</li>
+							<li>Флипп - F</li>
+							<li>Лутц - Lz</li>
+						</ul>
+					
+				<center><h3 onClick="scroll_list('spins')" class="point_of_list">вращения</h3></center>
+					<div class="hide" id="spins">
+					    <h4 class="sub_title" onClick="scroll_list('basic_positions')">базовые позиции</h4>
+							<ul class="hide" id="basic_positions">
+								<li>Стоя - USp</li>
+								<li>Волчок - SSp</li>
+								<li>Либела - CSp</li>
+								<li>Заклон - LSp</li>
+							</ul>
+						
+					<h4 class="sub_title" onClick="scroll_list('fly_spins')">прыжок во вращение</h4>
+						
+							<ul class="hide" id="fly_spins">
+								<li>Прыжок в позицию стоя - FUSp</li>
+								<li>Прыжок в волчок - FSSp</li>
+								<li>Прыжок в либелу - FCSp</li>
+								<li>Прыжок в заклон - FLSp</li>
+							</ul>
+						
+					<h4 class="sub_title" onClick="scroll_list('change_leg')">вращения со сменой ноги</h4>
+						
+							<ul class="hide" id="change_leg">
+								<li>Стоя со сменой ноги - (F)CUSp</li>
+								<li>Волчок со сменой ноги - (F)CSSp</li>
+								<li>Либела со сменой ноги - (F)CCSp</li>
+								<li>Заклон со сменой ноги - (F)CLSp</li>
+							</ul>
+						
+					<h4 class="sub_title" onClick="scroll_list('combo')">комбинация вращений</h4>
+						
+							<ul class="hide" id="combo">
+								<li>Без смены ноги - CoSp</li>
+								<li>Со сменой ноги - CCoSp</li>
+							</ul>
+				</div>		
+				<center><h3 onClick="scroll_list('steps')" class="point_of_list">дорожки</h3></center>
+					
+						<ul class="hide" id="steps">
+							<li>Дорожка шагов - StSq</li>
+							<li>Хореографическая последовательность - ChSq</li>
+						</ul>		
+		</div>
+		
 
-
-var list_value={
-    "1t":0.4,
-    "1s":0.6
-};
-
-
-function get_value(){
-    var error=0
-    var scoreTotal=0;
-    var scoreSub=0;
-    var score=0;
-    var cutterOfRow=0;
-    var R=0;
-    
-    
-    
-    //проверка полей ввода
-    for (var i=1;i<5;i++){   
-        var in_i = "in_"+i;      
-        var cutterOfRow = cutterOfRow+1; 
-        var item = document.getElementById(in_i).value;
-        var inf = document.getElementById(in_i);
-        inf.style.color = "black";
-        
-        var itemLow = item.toLowerCase();
-        var score = list_value [itemLow];
-        if (item == ""){
-            var score=0;
-            };
-        
-        //проверка на ошибку ввода
-        if (score == undefined){ 
-            var error = error+1;   
-            inf.style.color = "red";
-            var score=0;       
-            };
-            
-        var scoreTotal = scoreTotal+score;
-        var scoreSub = scoreSub+score;
-        
-        //отсчет ряда
-        if (cutterOfRow == 2){
-            var R = R+1;
-            var out_R = "out_"+R;
-            document.getElementById(out_R).innerHTML=scoreSub;
-            var scoreSub=0;
-            var cutterOfRow=0;
-            }  
-        }
-        
-    document.getElementById("outTotal").innerHTML=scoreTotal;
-    
-    
-    
-    
-    //проверка количества ошибок в названии элементов
-    document.getElementById("atention").style.color="red";
-    if (error==1){
-        document.getElementById("atention").innerHTML="проверьте название элемента";
-        } else if (error>1){
-        document.getElementById("atention").innerHTML="проверьте название элементов";
-        } else {
-        document.getElementById("atention").style.color="black";
-        document.getElementById("atention").innerHTML="";
-        };
-}
-
-  
-</script>
-</body>
+		<div class="contanerINNER">
+			<center><h1>калькулятор элементов программы по фигурному катанию</h1></center>
+					
+				<table class="coolBorder" background="imagesCalculator/greyBox2.jpg">
+					<tr>
+						<th colspan="7"><center><output id="atention1"></center></output></th> <!--поле вывода сообщений-->
+						<th></th>
+					</tr>
+					<tr>
+						<th colspan="7"><center><output id="atention"></center></output></th> <!--поле вывода сообщений-->
+						<th></th>
+					</tr>
+					<tr class="convexFont"> <!--НАЧАЛО ФУНКЦИОНАЛЬНОЙ ЧАСТИ ТАБЛИЦЫ-->
+						<th class="paddingAndFont">#</th>
+						<th colspan="5"><center>исполненные элементы</center></th>
+						<th><center>info</center></th>
+						<th style="padding: 0 10px"><center>баллы</center></th>
+						
+					</tr>
+					<tr><!--линия №1-->
+						<td class="paddingAndFont">1</td>
+						<td><input type="text"></td>
+						<td><input type="button" class="buttonPlus" value="+" onClick="show_field(0,1)"></td>
+						<td><input type="text" class="hide"></td>
+						<td style="td_width"><input type="button" class="buttonPlusH" value="+"onClick="show_field(2,2)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="checkbox" id="ch_1"><label for="ch_1"></label></td>
+						<td><center><output id="out_1"></output></center></td>
+						
+					</tr>	
+					<tr><!--линия №2-->
+						
+						<td class="paddingAndFont">2</td>
+						<td><input type="text"></td>
+						<td><input type="button" class="buttonPlus" value="+" onClick="show_field(3,4)"></td>
+						<td><input type="text" class="hide"></td>
+						<td style="td_width"><input type="button" class="buttonPlusH" value="+" onClick="show_field(5,5)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="checkbox"></td>
+						<td><center><output id="out_2"></output></center></td>
+						
+					</tr>	
+					<tr><!--линия №3-->
+						
+						<td class="paddingAndFont">3</td>
+						<td><input type="text" id="in_7"></td>
+						<td><input type="button" class="buttonPlus" value="+" onClick="show_field(6,7)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="button" class="buttonPlusH" value="+" onClick="show_field(8,8)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="checkbox" id="ch_3"></td>
+						<td><center><output id="out_3"></output></center></td>
+						
+					</tr>	
+					<tr><!--линия №4-->
+						
+						<td class="paddingAndFont">4</td>
+						<td><input type="text" id="in_10"></td>
+						<td><input type="button" class="buttonPlus" value="+" onClick="show_field(9,10)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="button" class="buttonPlusH" value="+" onClick="show_field(11,11)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="checkbox" id="ch_4"></td>
+						<td><center><output id="out_4"></output></center></td>
+						
+					</tr>	
+					<tr><!--линия №5-->
+						
+						<td class="paddingAndFont">5</td>
+						<td><input type="text" id="in_13"></td>
+						<td><input type="button" class="buttonPlus" value="+" onClick="show_field(12,13)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="button" class="buttonPlusH" value="+" onClick="show_field(14,14)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="checkbox" id="ch_5"></td>
+						<td><center><output id="out_5"></output></center></td>
+						
+					</tr>	
+					<tr><!--линия №6-->
+						
+						<td class="paddingAndFont">6</td>
+						<td><input type="text" id="in_16"></td>
+						<td><input type="button" class="buttonPlus" value="+" onClick="show_field(15,16)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="button" class="buttonPlusH" value="+" onClick="show_field(17,17)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="checkbox" id="ch_6"></td>
+						<td><center><output id="out_6"></output></center></td>
+						
+					</tr>	
+					<tr><!--линия №7-->
+						
+						<td class="paddingAndFont">7</td>
+						<td><input type="text" id="in_19"></td>
+						<td><input type="button" class="buttonPlus" value="+" onClick="show_field(18,19)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="button" class="buttonPlusH" value="+" onClick="show_field(20,20)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="checkbox" id="ch_7"></td>
+						<td><center><output id="out_7"></output></center></td>
+					</tr>	
+					<tr><!--линия №8-->
+						
+						<td class="paddingAndFont">8</td>
+						<td><input type="text"></td>
+						<td><input type="button" class="buttonPlus" value="+" onClick="show_field(21,22)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="button" class="buttonPlusH" value="+" onClick="show_field(23,23)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="checkbox" id="ch_8"></td>
+						<td><center><output id="out_8"></output></center></td>
+						
+					</tr>	
+					<tr><!--линия №9-->
+						
+						<td class="paddingAndFont">9</td>
+						<td><input type="text" ></td>
+						<td><input type="button" class="buttonPlus" value="+" onClick="show_field(24,25)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="button" class="buttonPlusH" value="+" onClick="show_field(26,26)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="checkbox" id="ch_9"></td>
+						<td><center><output id="out_9"></output></center></td>
+						
+					</tr>	
+					<tr><!--линия №10-->
+						
+						<td class="paddingAndFont">10</td>
+						<td><input type="text"></td>
+						<td><input type="button" class="buttonPlus" value="+" onClick="show_field(27,28)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="button" class="buttonPlusH" value="+" onClick="show_field(29,29)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="checkbox" id="ch_10"></td>
+						<td><center><output id="out_10"></output></center></td>
+						
+					</tr>	
+					<tr><!--линия №11-->
+						
+						<td class="paddingAndFont">11</td>
+						<td><input type="text"></td>
+						<td><input type="button" class="buttonPlus" value="+" onClick="show_field(30,31)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="button" class="buttonPlusH" value="+" onClick="show_field(32,32)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="checkbox" id="ch_11"></td>
+						<td><center><output id="out_11"></output></center></td>
+						
+					</tr>	
+					<tr><!--линия №12-->
+						
+						<td class="paddingAndFont">12</td>
+						<td><input type="text"></td>
+						<td><input type="button" class="buttonPlus" value="+" onClick="show_field(33,34)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="button" class="buttonPlusH" value="+" onClick="show_field(35,35)"></td>
+						<td><input type="text" class="hide"></td>
+						<td><input type="checkbox" id="ch_12"></td>
+						<td><center><output id="out_12"></output></center></td>
+						
+					</tr>	
+					<tr>
+						<td></td>
+						<td><input type="button" onClick="Reset()" class="buttonReset" value="сброс"></td>
+						<td></td>
+						<td colspan="3"><input type="button" onClick="get_value()" class="buttonScores" value="подсчёт баллов"></td>
+						<td></td>
+						<th><center><output id="outTotal" style="margin: 10px 0 25px 0"></output></center></th>
+					</tr>
+					<tr>
+						<th colspan="8"><output></output></th> <!--для высоты таблицы-->
+					</tr>	
+				</table>		
+						
+		</div>
+		<div class="side_bar_right">
+		
+		</div>
+	</div>
+	
+	
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="index.js"></script>
+  </body>
 </html>
