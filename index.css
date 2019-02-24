@@ -38,6 +38,7 @@ ul {
 table {
 	width: 445px;
 	border-collapse: collapse;
+	background-size: contain;
 }
 table th:nth-child(1){
 	width: 18px;
