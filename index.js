@@ -12,6 +12,14 @@
 		"1s":"1S"
 	};
 	
+	//функция добавления полей ввода
+	function show_field(f, ff){
+		var listOfInputs = document.querySelectorAll("input.hide, input.buttonPlusH");
+		var info = listOfInputs[f];
+		info.style.display = "block";
+		info = listOfInputs[ff];
+		info.style.display = "block";
+	}
 	
 	//функция свернуть-развернуть список
 	function scroll_list(l){
@@ -44,8 +52,7 @@
 			//очистка полей баллов и checkbox
 			var info_out = listOfOutputs[i];
 			info_out.innerHTML="";
-			var info_check = listOfInputs_check[i];
-			
+			var info_check = listOfInputs_check[i];	
 			info_check.checked=false;
 		};
 			document.getElementById("outTotal").innerHTML="";
