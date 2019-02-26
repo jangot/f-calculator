@@ -23,11 +23,12 @@
 	
 	//функция свернуть-развернуть список
 	function scroll_list(l){
-		var info_list = document.getElementById(l).style;
-		if (info_list.display == "block"){
-			info_list.display = "none";
+		var listOfClause = document.querySelectorAll("ul.hide, div.hide");
+		var info = listOfClause[l].style;
+		if (info.display == "block"){
+			info.display = "none";
 	        } else{
-		    info_list.display = "block";
+		    info.display = "block";
 			};
 	};
 
