@@ -1,5 +1,5 @@
 h1 {
-  font-size: 22pt;
+  font-size: 24pt;
   text-shadow: 4px 4px 4px #aaa
  }
 h2 {
@@ -13,7 +13,7 @@ input {
   width: 80px;
     height: 25px;
   font-size: 18px;
-  padding: 0 0 3px 0;
+  padding: 0 0 0 0;
   border-radius: 1px; 
   background: none;
   outline: none;
@@ -27,46 +27,30 @@ input[type="checkbox"]{
 	cursor: pointer;
 }
  
-li {
-	list-style-type: none;
-}  
+li {list-style-type: none;}  
 ul {
 	padding-top: 0;
 	margin-top: 0;
 }
 
+
+
 table {
-	width: 445px;
+	margin: 0 auto;
+	width: 423px;
 	border-collapse: collapse;
 	background-size: contain;
 }
-table th:nth-child(1){
-	width: 18px;
-}
-table th:nth-child(2){
-	width: 300px;
-}
-table th:nth-child(3){
-	width: 17px;
-}
-table th:nth-child(4){
-	width: 25px;
-}
-table td:nth-child(2){
-	width: 82px;
-}
-table td:nth-child(4){
-	width: 84px;
-}
-table td:nth-child(6){
-	width: 84px;
-}
-table td:nth-child(3){
-	width: 24px;
-}
-table td:nth-child(5){
-	width: 24px;
-}
+table.coolBorder th:nth-of-type(1){width: 18px}
+table.coolBorder th:nth-of-type(2){width: 85px}
+table.coolBorder th:nth-of-type(3){width: 26px}
+table.coolBorder th:nth-of-type(4){width: 60px}
+table.coolBorder th:nth-of-type(5){width: 26px}
+table.coolBorder th:nth-of-type(6){width: 60px}
+table.coolBorder th:nth-of-type(7){width: 18px}
+table.coolBorder th:nth-of-type(8){width: 30px}
+
+
 .coolBorder{
 	background-size: cover;
 	border-radius: 15px;
@@ -75,6 +59,11 @@ table td:nth-child(5){
 	margin: 20px;
 }
 
+.smallAndHide{
+	display: none;
+	width: 55px;
+      height: 25px;
+}
 
 .buttonReset {
   width: 80px;
@@ -98,7 +87,7 @@ table td:nth-child(5){
 }
 
 .buttonScores {
-  width: 175px;
+  width: 145px;
   height: 25px;
   margin: 10px 0 25px 0;
   text-align: center;
@@ -122,7 +111,7 @@ table td:nth-child(5){
 	width:20px;
 	  height: 20px;	  
 	vertical-align: center;  
-	margin: 0px 2px 0px 1px;
+	margin: 0px 1px 0px 1px;
 	text-decoration: none;
 	font-size: 12px;
 	text-shadow: 0 -1px 1px #fff;
@@ -181,33 +170,8 @@ table td:nth-child(5){
 .hide {
 display: none;
 }
-.form {
-  margin: 5px 5px 0px 5px
-  }
-.contanerOUTTER {
-  width: 1271px;
-    height:1800px;
-  float: left;
-  }
 
-.side_bar_left {
-  width: 300px;
-    height: 800px;
-  float: left;
-  background: rgb(220,220,220);
-  }
-.side_bar_right{
-	width:300px;
-	 height: 800px;
-	 float: left;
-	background: rgb(250,250,250); 
-	display: block;
- }
-.contanerINNER {
-  width: 485px;
-    height: 800px;
-  float: left;
-  background: rgb(250,250,250);
-  }
+.wrap_list{display: none;}
+
 
 
