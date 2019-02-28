@@ -161,6 +161,7 @@ table.coolBorder th:nth-of-type(8){width: 30px}
 }
 .point_of_list{
 	cursor: pointer;
+	text-align: center;
 }
 .sub_title {
 	margin: 10px;

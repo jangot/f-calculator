@@ -14,6 +14,7 @@
 		"1s":"1S"
 	};
 
+	//всплывающие подсказки
 	$(document).ready(function(){
 	$("[data-toggle='tooltip']").tooltip({
 		placement: "right",
@@ -24,8 +25,10 @@
 
 
 	//функция добавления полей ввода и кнопок
+	$(document).ready(function(){
 	$(".buttonPlus").click(show_field);
-	$(".buttonPlusH").click(show_field);
+	$(".buttonPlusH").click(show_field)
+	});
 	function show_field(){
 		$(this)
 		.parent()
@@ -39,24 +42,21 @@
 	};
 
 	//функция свернуть-развернуть список
+	$(document).ready(function(){
 	$(".point_of_list").click(sc);
+	$(".sub_title").click(sc);
+	});
 	function sc(){
+		$(this).parent()
+		.find("div.wrap_list")
+		.not($(this).next())
+		.hide(1000);
 		$(this)
-		.parent()
-		.find("div")
-		.show()
-		
+		.next()
+		.toggle(3000)
 	};
 
-	function scroll_list(l){
-		var listOfClause = document.querySelectorAll("ul.hide, div.hide");
-		var info = listOfClause[l].style;
-		if (info.display == "block"){
-			info.display = "none";
-	        } else{
-		    info.display = "block";
-			};
-	};
+	
 
 	//функция очистки области "atention"
 	function clean_up_atention(){
