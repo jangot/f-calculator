@@ -55,7 +55,7 @@
 		.toggle()
 	};
 
-	
+
 
 	//функция очистки области "atention"
 	function clean_up_atention(){
