@@ -21,67 +21,88 @@
 		    </div>
 	   </div>
 	   <div class="row justify-content-center">
-		     <div class="col-md-3 bg-white text-dark"> <!--правая колонка - список элементов-->
-		  				<center><h2>условные обозначения элементов фигурного катания</h2></center>
-						<center><h3  class="point_of_list">прыжки</h3></center>
-						<div class="wrap_list">
-							<ul>
-								<li>Аксель - A</li>
-								<li>Тулуп - T</li>
-							    <li>Сальхов - S</li>
-							    <li>Ритбергер - Lo</li>
-							    <li>Флипп - F</li>
-							    <li>Лутц - Lz</li>
-						    </ul>
-						</div>
-						<center><h3 onClick="scroll_list(1)" class="point_of_list">вращения</h3></center>
-					    <div class="hide">
-					        <h4 class="sub_title" onClick="scroll_list(2)">базовые позиции</h4>
-						    <ul class="hide">
-								<li>Стоя - USp</li>
-								<li>Волчок - SSp</li>
-								<li>Либела - CSp</li>
-								<li>Заклон - LSp</li>
-							</ul>
-
-					<h4 class="sub_title" onClick="scroll_list(3)">прыжок во вращение</h4>
-
-							<ul class="hide">
-								<li>Прыжок в позицию стоя - FUSp</li>
-								<li>Прыжок в волчок - FSSp</li>
-								<li>Прыжок в либелу - FCSp</li>
-								<li>Прыжок в заклон - FLSp</li>
-							</ul>
-
-					<h4 class="sub_title" onClick="scroll_list(4)">вращения со сменой ноги</h4>
-
-							<ul class="hide">
-								<li>Стоя со сменой ноги - (F)CUSp</li>
-								<li>Волчок со сменой ноги - (F)CSSp</li>
-								<li>Либела со сменой ноги - (F)CCSp</li>
-								<li>Заклон со сменой ноги - (F)CLSp</li>
-							</ul>
-
-					<h4 class="sub_title" onClick="scroll_list(5)">комбинация вращений</h4>
-
-							<ul class="hide">
-								<li>Без смены ноги - CoSp</li>
-								<li>Со сменой ноги - CCoSp</li>
-							</ul>
+		     <div class="col-md-3 bg-light text-dark"> <!--правая колонка - список элементов-->
+				<div style="margin: 15px">
+					<center><h2>условные обозначения элементов фигурного катания</h2></center>
 				</div>
-				<center><h3 onClick="scroll_list(6)" class="point_of_list">дорожки</h3></center>
-
-						<ul class="hide">
-							<li>Дорожка шагов - StSq</li>
-							<li>Хореографическая последовательность - ChSq</li>
+				<div class="wrap_head">
+					<h3 class="point_of_list">прыжки</h3>
+				</div>
+				<div class="wrap_list">
+					<ul>
+						<li>Аксель - A</li>
+						<li>Тулуп - T</li>
+					    <li>Сальхов - S</li>
+					    <li>Ритбергер - Lo</li>
+					    <li>Флипп - F</li>
+					    <li>Лутц - Lz</li>
+				    </ul>
+				</div>
+				<div class="wrap_head">
+					<h3 class="point_of_list">вращения</h3>
+				</div>
+				<div class="wrap_list">
+					<div class="wrap_head_s">
+						<h4 class="sub_title">базовые позиции</h4>
+					</div>
+					<div class="wrap_list">
+						<ul>
+							<li>Стоя - USp</li>
+							<li>Волчок - SSp</li>
+							<li>Либела - CSp</li>
+							<li>Заклон - LSp</li>
 						</ul>
+					</div>
 
-
-		</div>
+					<div class="wrap_head_s">
+						<h4 class="sub_title">прыжок во вращение</h4>
+					</div>
+					<div class="wrap_list">
+						<ul>
+							<li>Прыжок в позицию стоя - FUSp</li>
+							<li>Прыжок в волчок - FSSp</li>
+							<li>Прыжок в либелу - FCSp</li>
+							<li>Прыжок в заклон - FLSp</li>
+						</ul>
+					</div>
+					
+					<div class="wrap_head_s">
+						<h4 class="sub_title">вращения со сменой ноги</h4>
+					</div>
+					<div class="wrap_list">
+						<ul>
+							<li>Стоя со сменой ноги - (F)CUSp</li>
+							<li>Волчок со сменой ноги - (F)CSSp</li>
+							<li>Либела со сменой ноги - (F)CCSp</li>
+							<li>Заклон со сменой ноги - (F)CLSp</li>
+						</ul>
+					</div>
+					
+					<div class="wrap_head_s">
+						<h4 class="sub_title">комбинация вращений</h4>
+					</div>
+					<div class="wrap_list">
+						<ul>
+							<li>Без смены ноги - CoSp</li>
+							<li>Со сменой ноги - CCoSp</li>
+						</ul>
+					</div>	
+				</div>
+				<div class="wrap_head">
+					<h3 class="point_of_list">дорожки</h3>
+				</div>
+				<div class="wrap_list">	
+					<ul>
+						<li>Дорожка шагов - StSq</li>
+						<li>Хореографическая последовательность - ChSq</li>
+					</ul>
+				</div>
+			</div>
+		
 
 
 		<div class="col-md-5 bg-white text-dark"> <!--основная колонка с калькулятором-->
-			<center></center>
+			
 
 				<table class="coolBorder" background="imagesCalculator/greyBox2.jpg">
 					<tr> <!--Ряд для назначения размеров ячеек-->
@@ -260,8 +281,6 @@
 		</div>
 		<div class="col-md-2"> <!--колонка рекламного блока-->
 		</div>
-
-	  </div>
 	</div>
 
 

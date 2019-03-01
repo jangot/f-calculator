@@ -3,16 +3,16 @@ h1 {
   text-shadow: 4px 4px 4px #aaa
  }
 h2 {
-  font-size: 18pt;
+  font-size: 16pt;
  }
 h3 {
-  font-size: 16pt;
+  font-size: 14pt;
 }
 
 input {
   width: 80px;
     height: 25px;
-  font-size: 18px;
+  font-size: 14px;
   padding: 0 0 0 0;
   border-radius: 1px; 
   background: none;
@@ -161,9 +161,9 @@ table.coolBorder th:nth-of-type(8){width: 30px}
 }
 .point_of_list{
 	cursor: pointer;
+	text-align: center;
 }
 .sub_title {
-	margin: 10px;
 	font-size: 14pt;
 	cursor: pointer;
 }
@@ -173,5 +173,18 @@ display: none;
 
 .wrap_list{display: none;}
 
+.wrap_head{
+  text-shadow: 0 -1px 1px #ffff;
+  outline: none;
+  border: 1px solid #808080;
+  background: #c9c9c9;
+}
+.wrap_head_s{
+  text-shadow: 0 -1px 1px #ffff;
+  outline: none;
+  border: 1px solid #808080;
+  box-shadow: 0 1px 0 0 #000000;
+  background: c0c0c0;
+}
 
 
